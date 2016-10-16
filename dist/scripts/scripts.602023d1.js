@@ -1,0 +1,1 @@
+angular.module("core").run(["$templateCache",function(a){"use strict";a.put("views/main.html",'<div class="jumbotron"> <div ng-repeat="user in users"> </div> </div>')}]);
