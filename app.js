@@ -5,6 +5,7 @@ var posts = require('./controllers/post')
 models.sequelize.sync().then(function () {
 
   var server = restify.createServer()
+  server.use(restify.CORS());
   server.use(restify.bodyParser());
   server.use(restify.queryParser());
 
@@ -24,6 +25,7 @@ models.sequelize.sync().then(function () {
     directory: '.public/app',
     default: 'index.html'
   }));
+
 
   server.listen(8080, function () {
     console.log('%s listening at %s', server.name, server.url);
